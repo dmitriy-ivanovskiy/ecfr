@@ -3,7 +3,7 @@ const CONFIG = {
     // API Configuration - automatically detect environment
     API_BASE_URL: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
         ? "http://127.0.0.1:8001"
-        : "https://ecfr-backend.onrender.com", // Update this with your actual Render backend URL
+        : "https://ecfr-1.onrender.com", // Your actual Render backend URL
     
     // UI Configuration
     STATUS_DISPLAY_DURATION: 3000, // milliseconds
