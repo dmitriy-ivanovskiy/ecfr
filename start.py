@@ -18,6 +18,8 @@ if __name__ == "__main__":
     # Get port from environment (Render sets this automatically)
     port = int(os.environ.get("PORT", 10000))
     
+    print(f"Starting combined frontend+backend server on port {port}")
+    
     # Run the app
     uvicorn.run(
         app, 
