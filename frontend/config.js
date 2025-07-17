@@ -1,7 +1,9 @@
 // Configuration settings for eCFR Analysis Dashboard
 const CONFIG = {
-    // API Configuration
-    API_BASE_URL: "http://127.0.0.1:8001",
+    // API Configuration - automatically detect environment
+    API_BASE_URL: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+        ? "http://127.0.0.1:8001"
+        : "https://ecfr-backend.onrender.com", // Update this with your actual Render backend URL
     
     // UI Configuration
     STATUS_DISPLAY_DURATION: 3000, // milliseconds

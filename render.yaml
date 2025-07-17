@@ -1,0 +1,26 @@
+services:
+  # Backend API Service
+  - type: web
+    name: ecfr-backend
+    env: python
+    plan: free
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && python start_production.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    healthCheckPath: /health
+
+  # Frontend Static Site
+  - type: static
+    name: ecfr-frontend
+    buildCommand: echo "Static files ready"
+    staticPublishPath: ./frontend
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=86400
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html 
